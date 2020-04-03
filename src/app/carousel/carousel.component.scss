@@ -1,0 +1,110 @@
+.carousel {
+  font-family: "Arial", sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  &-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-item {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h5 {
+      font-size: 2em;
+      margin: 0;
+      padding: 0 5vw;
+      text-shadow: 0 0 1px black;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 10px 0 0;
+      padding: 0 5vw;
+      text-shadow: 0 0 1px black;
+    }
+  }
+
+  &-caption {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+  }
+
+  &-indicators {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 5vw 40px;
+
+    div {
+      width: 30px;
+      height: 3px;
+      margin: 0 3px;
+      cursor: pointer;
+      background-color: #fff;
+      opacity: 0.5;
+      transition: opacity 0.6s ease;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-control {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    color: #fff;
+    opacity: .6;
+
+    &.next {
+      right: 0;
+    }
+
+    &:hover, &:focus, &:active {
+      opacity: .6;
+      outline: none;
+
+      &.prev {
+        background-image: linear-gradient(to right, black, transparent);
+      }
+
+      &.next {
+        background-image: linear-gradient(to left, black, transparent);
+      }
+    }
+
+    i {
+      color: #fff;
+      font-size: 30px;
+    }
+  }
+}
