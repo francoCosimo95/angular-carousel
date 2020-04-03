@@ -24,14 +24,14 @@
       object-fit: cover;
     }
 
-    h5 {
+    &-title {
       font-size: 2em;
       margin: 0;
       padding: 0 5vw;
       text-shadow: 0 0 1px black;
     }
 
-    p {
+    &-decription {
       font-size: 1.2em;
       margin: 10px 0 0;
       padding: 0 5vw;

@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {CarouselItem} from './carousel-item';
 
 @Component({
@@ -6,7 +6,7 @@ import {CarouselItem} from './carousel-item';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit, OnChanges, OnDestroy {
+export class CarouselComponent implements OnInit, OnDestroy {
 
   @Input() items: CarouselItem[];
   @Input() autoSlide: boolean = true;
@@ -25,17 +25,12 @@ export class CarouselComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.currentItem = this.items?.length ? {...this.items[0], index: 0} : null;
+    this.startInterval();
   }
 
   ngOnDestroy(): void {
     this.stopInterval();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.items.previousValue !== this.items) {
-      this.currentItem = this.items?.length ? {...this.items[0], index: 0} : null;
-      this.startInterval();
-    }
   }
 
   slideTo(index: number): void {
@@ -54,7 +49,7 @@ export class CarouselComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private startInterval(): void {
-    if (this.autoSlide) {
+    if (this.autoSlide && this.currentItem) {
       this.stopInterval();
       this.currentInterval = setInterval(this.slideToNext.bind(this), this.currentItem.interval || this.interval);
     }

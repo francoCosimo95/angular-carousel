@@ -11,9 +11,6 @@ export class HomeComponent implements OnInit {
   carouselItems: CarouselItem[];
 
   constructor() {
-  }
-
-  ngOnInit(): void {
     this.carouselItems = [{
       src: '/assets/img/natura.jpg',
       alt: 'Natura',
@@ -32,6 +29,10 @@ export class HomeComponent implements OnInit {
       src: '/assets/img/panchina.jpeg',
       alt: 'Panchina',
     }];
+  }
+
+  ngOnInit(): void {
+
   }
 
 }

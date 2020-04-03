@@ -3,8 +3,8 @@
         <div class="carousel-item">
             <img [src]="currentItem.src" [alt]="currentItem.alt">
             <div *ngIf="showCaption" class="carousel-caption">
-                <h5 *ngIf="currentItem.title" [innerHTML]="currentItem.title"></h5>
-                <p *ngIf="currentItem.description" [innerHTML]="currentItem.description"></p>
+                <h5 class="carousel-item-title" *ngIf="currentItem.title" [innerHTML]="currentItem.title"></h5>
+                <p class="carousel-item-description" *ngIf="currentItem.description" [innerHTML]="currentItem.description"></p>
             </div>
         </div>
     </div>
