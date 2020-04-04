@@ -13,7 +13,9 @@ import {CarouselModule} from '../carousel/carousel.module';
     CommonModule,
     CarouselModule
   ],
-  providers: [HomeService]
+  providers: [
+    HomeService
+  ]
 })
 export class HomeModule {
 }
