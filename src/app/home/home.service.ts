@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {CarouselItem} from '../carousel/carousel-item';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class HomeService {
@@ -11,21 +12,21 @@ export class HomeService {
 
   constructor() {
     this.carouselItems = [{
-      src: '/assets/img/natura.jpg',
+      src: environment.BASE_URL + 'assets/img/natura.jpg',
       alt: 'Natura',
       title: 'First item',
       description: 'what a desert'
     }, {
-      src: '/assets/img/fiume.jpeg',
+      src: environment.BASE_URL + 'assets/img/fiume.jpeg',
       alt: 'Fiume',
       title: 'Title only',
     }, {
-      src: '/assets/img/girasoli.jpg',
+      src: environment.BASE_URL + 'assets/img/girasoli.jpg',
       alt: 'Girasoli',
       description: 'Description only.<br>This interval is custom to <b>3s</b>',
       interval: 3000
     }, {
-      src: '/assets/img/panchina.jpeg',
+      src: environment.BASE_URL + 'assets/img/panchina.jpeg',
       alt: 'Panchina',
     }];
   }
