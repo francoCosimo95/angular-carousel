@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "con-te-carousel": {
+    "angular-carousel": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/con-te-carousel",
+            "outputPath": "dist/angular-carousel",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "con-te-carousel:build"
+            "browserTarget": "angular-carousel:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "con-te-carousel:build:production"
+              "browserTarget": "angular-carousel:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "con-te-carousel:build"
+            "browserTarget": "angular-carousel:build"
           }
         },
         "test": {
@@ -116,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "con-te-carousel:serve"
+            "devServerTarget": "angular-carousel:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "con-te-carousel:serve:production"
+              "devServerTarget": "angular-carousel:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "con-te-carousel"
+  "defaultProject": "angular-carousel"
 }
